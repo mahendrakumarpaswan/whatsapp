@@ -1,0 +1,3 @@
+.sidebar-inner{width:100%;}
+.sidebar-inner{overflow-y:scroll;}
+.sidebar .sidebar-menu>ul>li.submenu ul{display:block;}

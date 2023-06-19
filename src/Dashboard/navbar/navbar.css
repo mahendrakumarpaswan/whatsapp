@@ -1,0 +1,24 @@
+.user-profile{
+    width: 70px;
+    height:50px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: aliceblue;
+    cursor: pointer;
+   
+}
+.user-sub-profile{
+   
+    text-align: center;
+
+}
+
+.user-sub-profile {
+   
+    gap: 15px; /* Adjust the spacing value as per your requirements */
+  }
+  
+  .profile-link, .logout-link {
+    margin: 0;
+    padding: 0;
+  }
