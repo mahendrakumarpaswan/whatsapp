@@ -142,7 +142,7 @@ const SendMessage = () => {
     />
     
     
-    <div id="content" class="main-content sendmessage">
+    <div id="content" class="main-content sendmessage" style={{width:'1000px'}}>
 
 
     <div class="container-fluid">
@@ -204,10 +204,6 @@ const SendMessage = () => {
                                                     <h5>Image Upload
                                                         <h7 style={{color:'red'}}>(Max file size 1 MB.)</h7>
                                                     </h5>
-
-                                                    
-                                                   
-                                                
                                             </div>
                                             <div class="col-md-4 col-sm-12">
                                                 <form role="form" id="fileupload1" method="POST" enctype="multipart/form-data">

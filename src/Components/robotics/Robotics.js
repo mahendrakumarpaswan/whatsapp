@@ -1,56 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
+import QRCode from 'react-qr-code';
 import './Robotics.css';
 
-import { useEffect, useState } from 'react';
-import io from 'socket.io-client';
-import QRCode from "react-qr-code";
-
-const socket=io.connect("http://localhost:4000",{});
+const socket = io.connect('http://localhost:4000', {});
 
 const Robotics = () => {
-
   const [show,setShow] = useState(false);
   const [qrCodeData, setQrCodeData] = useState('');
-  const [session,setSession]=useState('');
+  const [session, setSession] = useState('');
 
+  useEffect(() => {
+    socket.emit('connected', 'hello from client');
+    console.log('client side');
 
-  const createSession=()=>{
-    socket.emit("createSession",{
-    id:session
-  });
-  
-}
+    socket.on('qr', (data) => {
+      console.log('hi from server');
+      console.log('QR RECEIVED', data.qr);
+      setQrCodeData(data.qr);
+    });
 
+    socket.emit('createSession', {
+      id: session,
+    });
 
-useEffect(() => {
-  socket.emit("connected","hello from client");
-  console.log("client side")
-  socket.on("qr",(data)=>{
-  // const {qr}=data
-  console.log("hi from server")
-  console.log("QR RECEIVED",data.qr);
-  setQrCodeData(data.qr);
- });
-
-  },[]);
+    return () => {
+      // Clean up the WebSocket connection on component unmount
+      socket.disconnect();
+    };
+  }, [session]);
 
 
   const toggleQRCode = () =>{
-     
-    setShow(!show);
+         setShow(!show);
   }
 
-  return (
-    <div className='robotics'>
-            
-          <button  onClick={()=>toggleQRCode()} style={{borderRadius:'10px'}}>ShowQRCODE</button>
-            {show && <div> <h1>WhatsApp QR Code</h1>
-            <input type='text' value={session} onChange={(e)=>{setSession(e.target.value)}}/>
-            <button onClick={createSession}>create Session</button>
-            <h3>Open Whatsapp and scan QR code</h3>
-           <QRCode value={qrCodeData}/></div>}
-    </div>
-  )
-}
 
-export default Robotics
+
+
+  return (
+    <div className="robotics">
+       
+      <button onClick={()=>toggleQRCode()} style={{borderRadius:'5px'}}>ShowQRCode</button>
+
+    
+
+         {show && <div>  <h1>WhatsApp QR Code</h1>
+         {/* <input type="text" value={session} onChange={(e) => setSession(e.target.value)} /> */}
+         <h3>Open WhatsApp and scan QR code</h3>
+         <QRCode value={qrCodeData} /></div>}
+
+
+
+
+
+
+
+
+    </div>
+  );
+};
+
+export default Robotics;

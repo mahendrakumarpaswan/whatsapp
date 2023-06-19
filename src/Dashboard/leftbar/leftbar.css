@@ -1,4 +1,21 @@
 .menu-arrow.rotate-down {
     transform: rotate(90deg)!important;
   }
+
+  .selected{
+    background-color: #D3D3D3;
+    border-radius: 5px;
+  }
+
+  .selected1{
+    background-color: #D3D3D3;
+    border-radius: 5px;
+  }
+
+  .selected2{
+    background-color: #D3D3D3;
+    border-radius: 5px;
+
+  }
+  
   
