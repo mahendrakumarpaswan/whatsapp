@@ -23,7 +23,7 @@ const Login = () => {
     const { email, password } = user;
     if (email && password) {
       try {
-        const res = await axios.post('http://localhost:8009/subAdminLogin', user);
+        const res = await axios.post('http://localhost:8009/adminLogin', user);
         console.log(res);
         console.log(res.data.result.token);
         localStorage.setItem('user', res.data.result.token);

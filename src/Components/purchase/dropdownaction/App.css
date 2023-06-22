@@ -1,0 +1,30 @@
+.purchasedetails{
+    margin-top: 100px!important;
+    max-width: 1000px;
+    /* max-height: 400px; */
+    margin: 0 auto; /* To center the table horizontally */
+    margin-right: 80px!important;
+}
+
+.addpayment{
+    margin-top: 100px!important;
+    max-width: 1000px;
+    /* max-height: 400px; */
+    margin: 0 auto; /* To center the table horizontally */
+    margin-right: 80px!important;
+}
+.editepurchase{
+    margin-top: 100px!important;
+    max-width: 1000px;
+    /* max-height: 400px; */
+    margin: 0 auto; /* To center the table horizontally */
+    margin-right: 80px!important;
+}
+
+.uploadcopy{
+    margin-top: 100px!important;
+    max-width: 1000px;
+    /* max-height: 400px; */
+    margin: 0 auto; /* To center the table horizontally */
+    margin-right: 80px!important;
+}

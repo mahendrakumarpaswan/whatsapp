@@ -15,6 +15,18 @@ import BulkMailing from './Components/bulkmailing/BulkMailing';
 import BuyPlan from './Components/buyplan/BuyPlan';
 import Paymentpage from './Components/payment/Paymentpage';
 import Supportpage from './Components/support/Supportpage';
+import Productpage from './Components/product/Productpage';
+import Purchase from './Components/purchase/Purchase';
+import PurchaseReturn from './Components/purchase/PurchaseReturn';
+import Sale from './Components/sale/Sale';
+import SaleReturn from './Components/sale/SaleReturn';
+import Quotation from './Components/sale/Quotation';
+import Transfer from './Components/transfer/Transfer';
+import Productcategory from './Components/setting/Productcategory';
+import Productsubcategory from './Components/setting/Productsubcategory';
+import Brandmaster from './Components/setting/Brandmaster';
+import Warehouse from './Components/setting/Warehouse';
+import { PurchaseDetails } from './Components/purchase/dropdownaction/PurchaseDetails';
 import UserProfile from './Components/userprofile/UserProfile';
 import LeftBar from './Dashboard/leftbar/LeftBar';
 import Navbar from './Dashboard/navbar/Navbar';
@@ -55,6 +67,18 @@ function App() {
         <Route path='/paymentpage' element={<Paymentpage/>}/>
         <Route path='/supportpage' element={<Supportpage/>}/>
         <Route path='/userprofilepage' element={<UserProfile/>}/>
+        <Route path='/productpage' element={<Productpage/>}/>
+        <Route path='/purchasepage' element={<Purchase/>}/>
+        <Route path='/purchasereturnpage' element={<PurchaseReturn/>}/>
+        <Route path='/salepage' element={<Sale/>}/>
+        <Route path='/salereturnpage' element={<SaleReturn/>}/>
+        <Route path='/quotationnpage' element={<Quotation/>}/>
+        <Route path='/transferpage' element={<Transfer/>}/>
+        <Route path='/productcategory' element={<Productcategory/>}/>
+        <Route path='/productsubcategory' element={<Productsubcategory/>}/>
+        <Route path='/brandmaster' element={<Brandmaster/>}/>
+        <Route path='/warehouse' element={<Warehouse/>}/>
+        <Route path='/purchasedetails' element={<PurchaseDetails/>}/>
         {/* Add a catch-all route for undefined routes */}
         <Route path='/*' element={<Navigate to="/error" replace />} />
       </Routes>
